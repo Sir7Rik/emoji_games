@@ -33,3 +33,48 @@ box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 text-align: center;
 user-select: none;
 }
+
+.open{
+    animation: open-card 0.2s linear forward;
+}
+
+.close{
+    animation: close-card 0.2s linear;
+}
+
+@keyframes open-card{
+    0%{
+        font-size: 0;
+        transform: rotate(180deg);
+        background:linear-gradient(-90deg, rgb(27, 2, 31) 0%, rgb(69, 13, 165) 52%, rgb(127, 19, 131) 100%) ;
+    }
+    50%{
+        font-size: 0;
+    }
+    51%{
+        font-size: 75px;
+    }
+    100%{
+        font-size: 75px;
+        background: white;
+    }
+
+}
+@keyframes close-card{
+    0%{
+        font-size: 75px;
+        background: white;
+    }
+    50%{
+        font-size: 75px;
+    }
+    51%{
+        font-size: 0;
+    }
+    100%{
+        font-size: 0;
+        transform: rotate(180deg);
+        background:linear-gradient(-90deg, rgb(27, 2, 31) 0%, rgb(69, 13, 165) 52%, rgb(127, 19, 131) 100%) ;
+    }
+
+}
