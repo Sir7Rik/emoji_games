@@ -1,0 +1,29 @@
+body{
+    background-color: aquamarine;
+}
+
+head{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: bold;
+    color: rgb(111, 190, 111);
+    font-size: 42px;
+    line-height: 47px;
+    display: flex;
+    justify-content: center;
+    margin: 40px auto 40px auto;
+}
+
+.card{
+    font-size: 0;
+    margin: 25px;
+    width: 140px;
+    height: 140px;
+    background: rgb(33,0,36);
+background: linear-gradient(90deg, rgba(33,0,36,1) 0%, rgba(94,0,255,1) 52%, rgba(188,16,193,1) 100%);
+border: 5px solid white;
+border-radius: 12px;
+box-sizing: border-box;
+box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+text-align: center;
+user-select: none;
+}
