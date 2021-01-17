@@ -4,7 +4,7 @@ function shuffleEmoji(arr){
 }
 
 function coupleArr(arr){
-    return[].contact(arr, arr);
+    return[].concat(arr, arr);
 }
 
 function fillCards(cards, emoji){
