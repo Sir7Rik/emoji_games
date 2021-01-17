@@ -43,6 +43,8 @@ class GameProcess {
         this.cardField = cardsField;
         this.cardElems = cardElems;
         this.cardList = [];
+        this.initCards();
+        this.intEvents();
     }
     coupleEmoji(emojilist){
         const arr = emojilist.map((emoji, id) => ({
@@ -65,3 +67,14 @@ class Card {
         this.node.textContent = emoji;
     }
 }
+
+initEvents() {
+    this.cardsField.addEventListener('click', ({ target }) => {
+        if( target.classList.constaint('card')) {
+            const cardIdx = this.cardsElems.indexOf(target);
+            const card = this.cardsList[cardIdx];
+        }
+    });
+  }
+}
+    
