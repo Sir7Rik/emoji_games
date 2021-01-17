@@ -44,7 +44,7 @@ class GameProcess {
         this.cardElems = cardElems;
         this.cardList = [];
         this.initCards();
-        this.intEvents();
+        this.initEvents();
     }
     coupleEmoji(emojilist){
         const arr = emojilist.map((emoji, id) => ({
@@ -58,7 +58,16 @@ class GameProcess {
     shuffleEmoji() {
         this.emojiList = this.emojiList.sort(() => Math.random() - 0.5);
     }
-}
+    initEvents() {
+        this.cardsField.addEventListener('click', ({ target }) => {
+            if( target.classList.constaint('card')) {
+                const cardIdx = this.cardsElems.indexOf(target);
+                const card = this.cardsList[cardIdx];
+            }
+        });
+      }
+    }
+    
 class Card {
     constructor(node, {id, emoji}) {
         this.node = node;
@@ -68,13 +77,5 @@ class Card {
     }
 }
 
-initEvents() {
-    this.cardsField.addEventListener('click', ({ target }) => {
-        if( target.classList.constaint('card')) {
-            const cardIdx = this.cardsElems.indexOf(target);
-            const card = this.cardsList[cardIdx];
-        }
-    });
-  }
-}
+
     
