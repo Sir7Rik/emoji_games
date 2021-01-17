@@ -29,3 +29,10 @@ function clickEvent() {
       this.classList.add('close');
     }
 }
+
+const enumStatus = {
+    close:'open',
+    open:'close',
+    success:'wrong',
+    wrong:'success',
+}
