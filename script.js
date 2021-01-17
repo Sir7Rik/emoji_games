@@ -1,5 +1,5 @@
 
-function shuffleEmoji(arr){
+function shuffleArr(arr){
     return arr.sort(() => Math.random()-0.5);
 }
 
@@ -14,7 +14,7 @@ function fillCards(cards, emoji){
 (function init() {
     const emoji = '🎸 🥁 🎻 🎷 🎤 🎹'.split(' ')
     const cards = document.querySelectorAll('.card');
-    const shuffleArr = shuffleEmoji(coupleArr(emoji));
+    const shuffleArr = shuffleArr(coupleArr(emoji));
     fillCards(cards, shuffleArr);
     cards.forEach((card) => { card.addEventListener('click', clickEvent); });
 }());
