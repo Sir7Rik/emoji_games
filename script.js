@@ -67,13 +67,21 @@ class GameProcess {
         });
       }
     }
-    
+
 class Card {
     constructor(node, {id, emoji}) {
         this.node = node;
         this.id = id;
         this.status = enumStatus.close;
         this.node.textContent = emoji;
+    }
+    getStatus(){
+
+        return this.status;
+    }
+    getId(){
+        return this.id;
+
     }
 }
 
