@@ -35,4 +35,4 @@ const enumStatus = {
     open:'close',
     success:'wrong',
     wrong:'success',
-}
+};
