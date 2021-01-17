@@ -115,6 +115,24 @@ class Card {
         this.addClass(flip ? 'open-wrong' : 'wrong');
         this.status = enumStatus.wrong;
     }
+
+    checkCards(card){
+        const findOpenCard = this.cardsList.find((x) => x.getStatus() === enumStatus.open);
+        if (findOpenCard) {
+            const isCouple = card.getId() === findOpenCard.getId();
+            if (isCouple){
+                findOpenCard.success();
+                card.success(true);
+            }
+            else {
+                findOpenCard.wrong();
+                card.wrong(true);
+            }
+        }
+        else {
+            card.open();
+        }
+    }
 }
 
 
