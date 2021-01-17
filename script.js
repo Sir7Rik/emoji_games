@@ -83,6 +83,18 @@ class Card {
         return this.id;
 
     }
+    addClass(name){
+        this.node.classList.add(name)
+
+    }
+    removeClass(){
+        this.node.classList.remove(name)
+
+    }
+    clearContext(){
+        ['open', 'wrong', 'success', 'open-success', 'open-wrong'].forEach((n) => this.removeClass(n));
+        
+    }
 }
 
 
