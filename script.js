@@ -44,4 +44,16 @@ class GameProcess {
         this.cardElems = cardElems;
         this.cardList = [];
     }
+    coupleEmoji(emojilist){
+        const arr = emojilist.map((emoji, id) => ({
+            emoji, id
+        }));
+        return arr.concat(arr, arr);
+    }
+    initCards() {
+        this.shuffleEmoji();
+    }
+    shuffleEmoji() {
+        this.emojiList = this.emojiList.sort(() => Math.random() - 0.5);
+    }
 }
