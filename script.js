@@ -57,3 +57,11 @@ class GameProcess {
         this.emojiList = this.emojiList.sort(() => Math.random() - 0.5);
     }
 }
+class Card {
+    constructor(node, {id, emoji}) {
+        this.node = node;
+        this.id = id;
+        this.status = enumStatus.close;
+        this.node.textContent = emoji;
+    }
+}
