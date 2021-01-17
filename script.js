@@ -14,8 +14,8 @@ function fillCards(cards, emoji){
 (function init() {
     const emoji = '🎸 🥁 🎻 🎷 🎤 🎹'.split(' ')
     const cards = document.querySelectorAll('.card');
-    const shuffleArr = shuffleArr(coupleArr(emoji));
-    fillCards(cards, shuffleArr);
+    const shuffleEmoji = shuffleArr(coupleArr(emoji));
+    fillCards(cards, shuffleEmoji);
     cards.forEach((card) => { card.addEventListener('click', clickEvent); });
 }());
 
