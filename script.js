@@ -12,7 +12,7 @@ function fillCards(cards, emoji){
 }
 
 (function init() {
-    const emoji = '🎸 🥁 🎻 🎷 🎤 🎹'
+    const emoji = '🎸 🥁 🎻 🎷 🎤 🎹'.split(' ')
     const cards = document.querySelectorAll('.card');
     const shuffleArr = shuffleEmoji(coupleArr(emoji));
     fillCards(cards, shuffleArr);
