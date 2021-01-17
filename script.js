@@ -36,3 +36,12 @@ const enumStatus = {
     success:'wrong',
     wrong:'success',
 };
+
+class GameProcess {
+    constructor({ emojiList, cardField, cardElems}) {
+        this.emojiList = this.coupleEmoji(emojiList);
+        this.cardField = cardsField;
+        this.cardElems = cardElems;
+        this.cardList = [];
+    }
+}
