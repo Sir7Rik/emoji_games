@@ -93,7 +93,27 @@ class Card {
     }
     clearContext(){
         ['open', 'wrong', 'success', 'open-success', 'open-wrong'].forEach((n) => this.removeClass(n));
-        
+    }
+    open(){
+        this.removeClass('close');
+        this.addClass('open');
+        this.status = enumStatus.open;
+    }
+    close(){
+        this.clearContext();
+        this.addClass('close');
+        this.status = enumStatus.close;
+    }
+    success(flip){
+        this.removeClass('close');
+        this.addClass(flip ? 'open-success' : 'success');
+        this.status = enumStatus.success;
+
+    }
+    wrong(flip){
+        this.removeClass('close');
+        this.addClass(flip ? 'open-wrong' : 'wrong');
+        this.status = enumStatus.wrong;
     }
 }
 
