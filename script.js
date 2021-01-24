@@ -63,6 +63,10 @@ class GameProcess {
             if( target.classList.constaint('card')) {
                 const cardIdx = this.cardsElems.indexOf(target);
                 const card = this.cardsList[cardIdx];
+                if (card.getStatus() === enumStatus.close){
+                    this.closeWrong();
+                    this.checkCards(card);
+                }
             }
         });
       }
