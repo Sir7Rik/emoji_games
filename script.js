@@ -70,8 +70,36 @@ class GameProcess {
             }
         });
       }
+      closeWrong(){
+          this.cardList.filter(
+              (x) => x.getStatus() === enumStatus.wrong
+          ).forEach((x) => x.close ()); 
+      }
+      checkCards(){
+          const findOpenCard = this.cardList.find((x) => x.getStatus() === enumStatus.open);
+          if(findOpenCard){
+              const isCouple = cards.getId() === findOpenCard.getId();
+              if(isCouple){
+                  findOpenCard.success();
+                  cards.success(true);
+              } else {
+                  findOpenCard.wrong();
+                  card.wrong(true);
+              }
+          } else{
+              cards.open();
+          }
+      }
+      coupleEmoji(emojiList){
+        const arr = this.emojiList.map((emoji, id) => ({
+            emoji, id,
+        }));
+        return arr.concat(arr);
+      }
     }
 
+
+    
 class Card {
     constructor(node, {id, emoji}) {
         this.node = node;
