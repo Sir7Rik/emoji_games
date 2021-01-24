@@ -37,6 +37,13 @@ const enumStatus = {
     wrong:'success',
 };
 
+function secondToTime(s){
+    const minute = Math.floor(s / 60);
+    const _seconds = s % 60;
+    const secondsFormat = _seconds < 10 ? `0${_seconds}` : _seconds.toString();
+    return `${minutes}:${secondsFormat}`;
+}
+
 class GameProcess {
     constructor({ emojiList, cardField, cardElems}) {
         this.emojiList = this.coupleEmoji(emojiList);
@@ -45,6 +52,11 @@ class GameProcess {
         this.cardList = [];
         this.initCards();
         this.initEvents();
+        this.timerNode = this.timerNode;
+    }
+
+    setTime(){
+        this.timerNode.textContent = secondToTime(seconds);
     }
 
     init(){
