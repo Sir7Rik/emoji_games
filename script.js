@@ -121,7 +121,11 @@ class GameProcess {
               (x) => x.getStatus() === enumStatus.wrong
           ).forEach((x) => x.close ()); 
       }
-      checkCards(){
+      checkCards(card){
+          if (!this.gameStarted){
+              this.gameStarted = true;
+              this.initTimer();
+          }
           const findOpenCard = this.cardList.find((x) => x.getStatus() === enumStatus.open);
           if(findOpenCard){
               const isCouple = cards.getId() === findOpenCard.getId();
@@ -134,6 +138,9 @@ class GameProcess {
               }
           } else{
               cards.open();
+          }
+          if (this.cardList.every((x) => x.getStatus() ===enumStatus.success)){
+              this.endGame(true);
           }
       }
       coupleEmoji(emojiList){
