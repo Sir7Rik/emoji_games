@@ -17,8 +17,13 @@ function fillCards(cards, emoji){
     const shuffleEmoji = shuffleArr(coupleArr(emoji));
     const timerNode = document.querySelector('.timer');
     const alertNode = document.querySelector('.alert');
-    fillCards(cards, shuffleEmoji);
-    cards.forEach((card) => { card.addEventListener('click', clickEvent); });
+   new GameProcess({
+       emojiList,
+       cards,
+       shuffleEmoji,
+       timerNode,
+       alertNode
+   })
 }());
 
 function clickEvent() {
@@ -135,7 +140,7 @@ class GameProcess {
           this.alertNode.querySelector(`.${status}`).classList.remove('invisible');
           this.alertNode.classList.remove('invisible');
       }
-      
+
       checkCards(card){
           if (!this.gameStarted){
               this.gameStarted = true;
