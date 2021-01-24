@@ -65,7 +65,7 @@ class GameProcess {
         this.timerNode.textContent = secondToTime(seconds);
     }
 
-    
+
     clearContext(){
         this.gameStarted = false;
         ['win', 'lose'].forEach((i) => {
@@ -78,6 +78,18 @@ class GameProcess {
         this.initCards();
         this.initEvents();
         this.setTime(this.timerOpts.seconds);
+    }
+
+    initTimer(){
+        let {seconds} = this.timerOpts;
+        this.timeId = setInterval(() => {
+            seconds--;
+            this.setTime(seconds);
+            if(!seconds){
+                this.endGame(false);
+
+            }
+        }, 1000);
     }
 
     coupleEmoji(emojilist){
