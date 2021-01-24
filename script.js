@@ -55,6 +55,9 @@ class GameProcess {
         this.initCards();
         this.initEvents();
         this.timerNode = this.timerNode;
+        this.timerOpts = {
+            seconds: 1,
+        }
     }
 
     setTime(){
@@ -64,6 +67,7 @@ class GameProcess {
     init(){
         this.initCards();
         this.initEvents();
+        this.setTime(this.timerOpts.seconds);
     }
 
     coupleEmoji(emojilist){
