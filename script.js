@@ -46,6 +46,12 @@ class GameProcess {
         this.initCards();
         this.initEvents();
     }
+
+    init(){
+        this.initCards();
+        this.initEvents();
+    }
+
     coupleEmoji(emojilist){
         const arr = emojilist.map((emoji, id) => ({
             emoji, id
@@ -99,7 +105,7 @@ class GameProcess {
     }
 
 
-    
+
 class Card {
     constructor(node, {id, emoji}) {
         this.node = node;
